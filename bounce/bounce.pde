@@ -1,18 +1,27 @@
-float xpos = 300;
-float xspeed = 12;
+float xPos = 300;
+float yPos = 200;
+float xSpeed = 12;
+float ySpeed = 6;
 
 void setup() {
-  size(600, 600);
+  size(900, 900);
 }
 
 void draw() {
   background(50);
 
-  ellipse(xpos, 300, 50, 50);
 
-  xpos = xpos + xspeed;
 
-  if (xpos > width || xpos < 0) {
-    xspeed = (-1)*xspeed;
+  if (xPos > width || xPos < 0) {
+    xSpeed = (-1)*xSpeed;
   }
+  if (yPos > height || yPos < 0) {
+    ySpeed = (-1)*ySpeed;
+  }
+
+  xPos = xPos + xSpeed;
+  yPos = yPos + ySpeed;
+  
+    ellipse(xPos, yPos, 50, 50);
+
 }
