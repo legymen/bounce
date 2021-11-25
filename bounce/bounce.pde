@@ -1,27 +1,20 @@
-float xPos = 300;
-float yPos = 200;
-float xSpeed = 12;
-float ySpeed = 6;
+Ball ball1;
+Ball ball2;
 
 void setup() {
   size(900, 900);
+
+  ball1 = new Ball();
+  ball2 = new Ball();
 }
 
 void draw() {
   background(50);
 
+  ball1.applyForce(new PVector(0, 10));
+  ball2.applyForce(new PVector(0, 10));
 
-
-  if (xPos > width || xPos < 0) {
-    xSpeed = (-1)*xSpeed;
-  }
-  if (yPos > height || yPos < 0) {
-    ySpeed = (-1)*ySpeed;
-  }
-
-  xPos = xPos + xSpeed;
-  yPos = yPos + ySpeed;
-  
-    ellipse(xPos, yPos, 50, 50);
+  ball1.run();
+  ball2.run();  
 
 }
