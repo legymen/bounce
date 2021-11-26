@@ -1,20 +1,28 @@
-Ball ball1;
-Ball ball2;
+
+Ball[] balls;
+
+PVector gravity, wind;
 
 void setup() {
   size(900, 900);
 
-  ball1 = new Ball();
-  ball2 = new Ball();
+  balls = new Ball[200];
+
+  for (int i = 0; i < balls.length; i++) {
+    balls[i] = new Ball();
+  }
+
+
+  gravity = new PVector(0, 2);
+  wind = new PVector(-0.5, -0.5);
 }
 
 void draw() {
-  background(50);
+  background(240);
 
-  ball1.applyForce(new PVector(0, 10));
-  ball2.applyForce(new PVector(0, 10));
-
-  ball1.run();
-  ball2.run();  
-
+  for (int i = 0; i < balls.length; i++) {
+    balls[i].applyForce(gravity);
+    balls[i].applyForce(wind);
+    balls[i].run();
+  }
 }

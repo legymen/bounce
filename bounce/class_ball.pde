@@ -8,7 +8,7 @@ class Ball{
     float mass;
 
     Ball(){
-        position = new PVector(random(0,100), random(0, 100));
+        position = new PVector(random(0,width), random(0, 100));
         velocity = new PVector(0, 0);
         acceleration = new PVector(0, 0);
 
@@ -43,6 +43,6 @@ class Ball{
     }
 
     void applyForce(PVector f){
-        acceleration.add(f.div(mass));
+        acceleration.add(f);
     }
 }
