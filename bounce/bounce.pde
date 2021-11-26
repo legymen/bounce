@@ -14,7 +14,7 @@ void setup() {
 
 
   gravity = new PVector(0, 2);
-  wind = new PVector(-0.5, -0.5);
+  wind = new PVector(-5, -0.5);
 }
 
 void draw() {
